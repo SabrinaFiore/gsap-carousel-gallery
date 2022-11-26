@@ -1,0 +1,13 @@
+<p>http-request-gallery works!</p>
+
+<h2 *ngIf="loading">LOADING</h2>
+
+<div class="img-container">
+  <button (click)="goPrev()" class="btn-prev">PREV</button>
+  <div *ngIf="images && images.length > 0" class="img-wrapper">
+    <div *ngFor="let item of images; let i = index">
+      <img src="{{item.url}}" [ngClass]="{'image-active': selectedIndex === i}" class="img">
+    </div>
+  </div>
+  <button (click)="goNext()" class="btn-next">NEXT</button>
+</div>

@@ -1,0 +1,15 @@
+<div class="carousel-container" #carouselContainer>
+  <div class="carousel" #carousel>
+    <figure
+      class="carousel__item item--{{i + 1}}"
+      *ngFor="let item of data; let i = index">
+      <img src="{{item.url}}" alt="img {{i + 1}}">
+      <figcaption class="title">{{item.title}}</figcaption>
+    </figure>
+  </div>
+  <button type="button" class="carousel__btn prev"
+    prev (click)="prev()"
+    [disabled]="isAnimating || middleIndex <= 1"
+  >prev</button>
+  <button type="button" class="carousel__btn next" next (click)="next()">next</button>
+</div>
